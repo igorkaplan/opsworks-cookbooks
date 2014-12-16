@@ -1,3 +1,4 @@
+name             "chromium"
 maintainer       "Greg Cochard"
 license          "apachev2"
 description      "Installs/symlinks chromium"
