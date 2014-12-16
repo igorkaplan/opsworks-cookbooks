@@ -11,3 +11,4 @@ Debian or Ubuntu.
 chromium.user (default deploy) - user's home dir in which to install
 chromium.location - location from which to fetch zip
 chromium.expand - location in which to expand chromium zip
+chromium.symlink - name of symlink to put in /usr/bin
