@@ -1,3 +1,3 @@
-set[:xvfb][:display] = 99
+set[:xvfb][:display] = 0
 
-default[:xvfb][:WxHxD] = "1280x1024x12"
+default[:xvfb][:WxHxD] = "1024x768x24"
