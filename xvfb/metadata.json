@@ -6,10 +6,7 @@
   "maintainer_email": "maciej@pasternacki.net",
   "license": "apachev2",
   "platforms": {
-    "debian": ">= 0.0.0",
-    "redhat": ">= 0.0.0",
-    "centos": ">= 0.0.0",
-    "fedora": ">= 0.0.0"
+    "debian": ">= 0.0.0"
   },
   "dependencies": {
   },
