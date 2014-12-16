@@ -10,6 +10,10 @@ execute "symlink chromium" do
   command "rm -f /usr/bin/#{node['chromium']['symlink']} && ln -s ~#{node['chromium']['user']}/#{node['chromium']['expand']}/chrome /usr/bin/#{node['chromium']['symlink']}"
 end
 
+execute "chown/chmod chromium" do
+  command "chown -R #{node['chromium']['user']} ~#{node['chromium']['user']}/#{node['chromium']['expand']}"
+end
+
 execute "chown/chmod chrome_sandbox" do
   command "chown root:root ~#{node['chromium']['user']}/#{node['chromium']['expand']}/chrome_sandbox && chmod 4755 ~#{node['chromium']['user']}/#{node['chromium']['expand']}/chrome_sandbox"
 end
