@@ -7,7 +7,7 @@ execute "unzip chromium" do
 end
 
 execute "symlink chromium" do
-  command "ln -s ~#{node['chromium']['user']}/#{node['chromium']['expand']}/chrome /usr/bin/#{node['chromium']['symlink']}"
+  command "rm -f /usr/bin/#{node['chromium']['symlink']} && ln -s ~#{node['chromium']['user']}/#{node['chromium']['expand']}/chrome /usr/bin/#{node['chromium']['symlink']}"
 end
 
 execute "chown/chmod chrome_sandbox" do
