@@ -3,7 +3,7 @@ remote_file "/home/#{node['chromium']['user']}/archive.zip" do
 end
 
 execute "unzip chromium" do
-  command "unzip -d ~#{node['chromium']['user']}/#{node['chromium']['expand']} ~#{node['chromium']['user']}/archive.zip && mv ~#{node['chromium']['user']}/#{node['chromium']['expand']}/*/* ~#{node['chromium']['user']}/#{node['chromium']['expand']}/"
+  command "unzip -d ~#{node['chromium']['user']}/temp ~#{node['chromium']['user']}/archive.zip && mv ~#{node['chromium']['user']}/temp/* ~#{node['chromium']['user']}/#{node['chromium']['expand']}"
 end
 
 execute "symlink chromium" do
