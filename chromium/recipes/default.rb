@@ -2,8 +2,12 @@ remote_file "/home/#{node['chromium']['user']}/archive.zip" do
   source node['chromium']['location']
 end
 
+execute "remove target directory in preparation" do
+  command "rm -rf ~#{node['chromium']['user']}/#{node['chromium']['expand']} && mkdir -p ~#{node['chromium']['user']}/#{node['chromium']['expand']}"
+end
+
 execute "unzip chromium" do
-  command "unzip -d ~#{node['chromium']['user']}/temp ~#{node['chromium']['user']}/archive.zip && mv ~#{node['chromium']['user']}/temp/* ~#{node['chromium']['user']}/#{node['chromium']['expand']}"
+  command "unzip -d ~#{node['chromium']['user']}/expandtemp ~#{node['chromium']['user']}/archive.zip && mv ~#{node['chromium']['user']}/expandtemp/* ~#{node['chromium']['user']}/#{node['chromium']['expand']} && rm ~#{node['chromium']['user']}/archive.zip && rm -rf ~#{node['chromium']['user']}/expandtemp"
 end
 
 execute "symlink chromium" do
