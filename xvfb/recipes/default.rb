@@ -6,5 +6,5 @@ template "/etc/init.d/xvfb" do
 end
 
 service "xvfb" do
-  action [:start, :enable]
+  action [:enable, :start]
 end
