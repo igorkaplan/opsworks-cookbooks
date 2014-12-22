@@ -3,7 +3,7 @@ remote_file "/home/#{node['chromium']['user']}/archive.zip" do
 end
 
 execute "remove target directory in preparation" do
-  command "rm -rf ~#{node['chromium']['user']}/#{node['chromium']['expand']} && mkdir -p ~#{node['chromium']['user']}/#{node['chromium']['expand']}"
+  command "rm -rf ~#{node['chromium']['user']}/#{node['chromium']['expand']}"
 end
 
 execute "unzip chromium" do
