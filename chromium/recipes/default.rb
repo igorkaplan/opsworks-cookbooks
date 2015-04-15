@@ -5,6 +5,7 @@ end
 execute "kill running instances" do
   command "killall #{node['chromium']['symlink']}"
   retries 5
+  ignore_failure true
 end
 
 execute "remove target directory in preparation" do
