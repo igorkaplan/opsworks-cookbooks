@@ -13,7 +13,7 @@ execute "remove target directory in preparation" do
 end
 
 execute "unzip chromium" do
-  command "unzip -d ~#{node['chromium']['user']}/expandtemp ~#{node['chromium']['user']}/archive.zip && mv ~#{node['chromium']['user']}/expandtemp/* ~#{node['chromium']['user']}/#{node['chromium']['expand']} && rm ~#{node['chromium']['user']}/archive.zip && rm -rf ~#{node['chromium']['user']}/expandtemp"
+  command "rm -rf ~#{node['chromium']['user']}/expandtemp/ &&  unzip -d ~#{node['chromium']['user']}/expandtemp ~#{node['chromium']['user']}/archive.zip && mv ~#{node['chromium']['user']}/expandtemp/* ~#{node['chromium']['user']}/#{node['chromium']['expand']} && rm ~#{node['chromium']['user']}/archive.zip && rm -rf ~#{node['chromium']['user']}/expandtemp"
   retries 5
 end
 
