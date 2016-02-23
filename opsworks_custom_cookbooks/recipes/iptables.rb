@@ -16,11 +16,7 @@ bash "configure_iptables" do
 
     iptables -A INPUT -i lo -j ACCEPT
     iptables -A OUTPUT -o lo -j ACCEPT
-    iptables -A INPUT -i eth0 -p tcp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT
-    iptables -A OUTPUT -o eth0 -p tcp --sport 80 -m state --state ESTABLISHED -j ACCEPT
-    iptables -A INPUT -i eth0 -p tcp --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT
-    iptables -A OUTPUT -o eth0 -p tcp --sport 443 -m state --state ESTABLISHED -j ACCEPT
-
+    
     iptables -A INPUT -i eth0 -p tcp -s #{subnet_cidr} -m state --state NEW,ESTABLISHED -j ACCEPT
     iptables -A OUTPUT -o eth0 -p tcp -m state --state ESTABLISHED -j ACCEPT
     
